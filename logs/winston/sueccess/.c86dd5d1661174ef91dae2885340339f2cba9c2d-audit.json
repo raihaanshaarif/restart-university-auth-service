@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\.c86dd5d1661174ef91dae2885340339f2cba9c2d-audit.json",
+    "files": [
+        {
+            "date": 1695038193843,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-18-09-17-success.log",
+            "hash": "56db57c9640919ae96dea139963de00f19ecfb5e99bf30d29cbfce1586b9f7eb"
+        }
+    ],
+    "hashType": "sha256"
+}
