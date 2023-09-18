@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\.448611bcc8e3ed4210b22b076c94b28f772f2d54-audit.json",
-    "files": [
-        {
-            "date": 1695038193868,
-            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\2023-18-09-17-error.log",
-            "hash": "d127c9920cfddded5bbc2e3a867d2a2e62939e54a2d3cf6b5828e833ff3adee7"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\.448611bcc8e3ed4210b22b076c94b28f772f2d54-audit.json",
+  "files": [
+    {
+      "date": 1695038193868,
+      "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\2023-18-09-17-error.log",
+      "hash": "d127c9920cfddded5bbc2e3a867d2a2e62939e54a2d3cf6b5828e833ff3adee7"
+    }
+  ],
+  "hashType": "sha256"
 }
