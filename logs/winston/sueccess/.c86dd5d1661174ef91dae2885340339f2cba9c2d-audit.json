@@ -1,15 +1,55 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\.c86dd5d1661174ef91dae2885340339f2cba9c2d-audit.json",
-  "files": [
-    {
-      "date": 1695038193843,
-      "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-18-09-17-success.log",
-      "hash": "56db57c9640919ae96dea139963de00f19ecfb5e99bf30d29cbfce1586b9f7eb"
-    }
-  ],
-  "hashType": "sha256"
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\.c86dd5d1661174ef91dae2885340339f2cba9c2d-audit.json",
+    "files": [
+        {
+            "date": 1695038193843,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-18-09-17-success.log",
+            "hash": "56db57c9640919ae96dea139963de00f19ecfb5e99bf30d29cbfce1586b9f7eb"
+        },
+        {
+            "date": 1695126406580,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-19-09-18-success.log",
+            "hash": "99cf7d407639994c42a96bd60597807ad4dbf4ca935e6dfcc93a68bb33d4e9da"
+        },
+        {
+            "date": 1695129023838,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-19-09-19-success.log",
+            "hash": "b1767082fb6b85631fb4034d61e91ce660045dae1109d57253e208221b3407dd"
+        },
+        {
+            "date": 1695198360658,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-20-09-14-success.log",
+            "hash": "2b9e4f0ead570782ab182bff1a5c93601783bfdd5d75ea6557a6a400ce5df4a5"
+        },
+        {
+            "date": 1695203199174,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-20-09-15-success.log",
+            "hash": "93835e480f2a57ee102872a971ece421b61beae17bb71032f31e5890a34d4821"
+        },
+        {
+            "date": 1695204763805,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-20-09-16-success.log",
+            "hash": "7d8cfe9257571cf1975deb64cbbaf0a77515dc05d98edaec0e097655c047250a"
+        },
+        {
+            "date": 1695215501372,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-20-09-19-success.log",
+            "hash": "69cceb83a1abe1523d3fc85878f3e08328fb623743f194a52a18f2da63b1e710"
+        },
+        {
+            "date": 1695288768906,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-21-09-15-success.log",
+            "hash": "98e29edb06cbb42a598feea6f8f2d7ebc58425088833f7267ed5914624d893d0"
+        },
+        {
+            "date": 1695290415702,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\sueccess\\2023-21-09-16-success.log",
+            "hash": "2e0eb2f168f5194c77baed78843aab9f55257198e6b78dcc95776a8e83ed66d7"
+        }
+    ],
+    "hashType": "sha256"
 }
