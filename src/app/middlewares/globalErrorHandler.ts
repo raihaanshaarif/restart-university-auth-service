@@ -1,28 +1,35 @@
 /* eslint-disable no-unused-expressions */
-import { ErrorRequestHandler } from 'express'
-import config from '../../config'
-import ApiError from '../../errors/ApiError'
-import handleValidationError from '../../errors/handleValidationError'
-import { iGenericErrorMessage } from '../interfaces/error'
-import { errorlogger } from '../../shared/logger'
+import { ErrorRequestHandler } from 'express';
+import config from '../../config';
+import ApiError from '../../errors/ApiError';
+import handleValidationError from '../../errors/handleValidationError';
+import { iGenericErrorMessage } from '../interfaces/error';
+import { errorlogger } from '../../shared/logger';
+import { ZodError } from 'zod';
+import handleZodError from '../../errors/handleZodError';
 
 const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   config.env === 'development'
-    ? console.log('Global Error Handleer ~', error)
-    : errorlogger.error('Global Error Handleer ~', error)
+    ? console.log('Global Error Handleer ~', { error })
+    : errorlogger.error('Global Error Handleer ~', error);
 
-  let statusCode = 500
-  let message = 'Something went wrong!'
-  let errorMessages: iGenericErrorMessage[] = []
+  let statusCode = 500;
+  let message = 'Something went wrong!';
+  let errorMessages: iGenericErrorMessage[] = [];
 
   if (error?.name === 'ValidationError') {
-    const simplifiedError = handleValidationError(error)
-    statusCode = simplifiedError.statusCode
-    message = simplifiedError.message
-    errorMessages = simplifiedError.errorMessages
+    const simplifiedError = handleValidationError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
+  } else if (error instanceof ZodError) {
+    const simplifiedError = handleZodError(error);
+    statusCode = simplifiedError.statusCode;
+    message = simplifiedError.message;
+    errorMessages = simplifiedError.errorMessages;
   } else if (error instanceof ApiError) {
-    statusCode = error?.statusCode
-    message = error?.message
+    statusCode = error?.statusCode;
+    message = error.message;
     errorMessages = error?.message
       ? [
           {
@@ -30,9 +37,9 @@ const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
             message: error?.message,
           },
         ]
-      : []
+      : [];
   } else if (error instanceof Error) {
-    message = error?.message
+    message = error?.message;
     errorMessages = error?.message
       ? [
           {
@@ -40,7 +47,7 @@ const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
             message: error?.message,
           },
         ]
-      : []
+      : [];
   }
 
   res.status(statusCode).json({
@@ -48,8 +55,8 @@ const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     message,
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
-  })
-  next()
-}
+  });
+  next();
+};
 
-export default gblobalErrorHandler
+export default gblobalErrorHandler;
