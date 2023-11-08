@@ -12,7 +12,11 @@ router.post(
 );
 
 // Update Document
-router.patch('/:id', AcademicSemesterController.updateSemester);
+router.patch(
+  '/:id',
+  validateRequest(AcademicSemesterValidation.updateAcademicSemesterZodSchema),
+  AcademicSemesterController.updateSemester,
+);
 export const AcademicSemesterRoutes = router;
 //Get All
 router.get('/', AcademicSemesterController.getAllSemesters);
