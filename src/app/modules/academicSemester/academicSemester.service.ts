@@ -101,7 +101,7 @@ const getAllSemesters = async (
     data: result,
   };
 };
-
+//Sigle Semester Get
 const getSingleSemester = async (
   id: string,
 ): Promise<IAcademicSemester | null> => {
@@ -109,8 +109,19 @@ const getSingleSemester = async (
   return result;
 };
 
+//Update Semester Put (note: new true dile realtime update show kore)
+const updateSemester = async (
+  id: string,
+  payload: Partial<IAcademicSemester>,
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
 export const AcademicSemesterService = {
   createSemester,
   getAllSemesters,
   getSingleSemester,
+  updateSemester,
 };
