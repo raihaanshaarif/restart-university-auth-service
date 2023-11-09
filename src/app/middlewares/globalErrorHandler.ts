@@ -9,7 +9,7 @@ import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
 import handleCastError from '../../errors/handleCastError';
 
-const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+const gblobalErrorHandler: ErrorRequestHandler = (error, req, res) => {
   config.env === 'development'
     ? console.log('Global Error Handleer ~', { error })
     : errorlogger.error('Global Error Handleer ~', error);
@@ -62,7 +62,6 @@ const gblobalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     errorMessages,
     stack: config.env !== 'production' ? error?.stack : undefined,
   });
-  next();
 };
 
 export default gblobalErrorHandler;
