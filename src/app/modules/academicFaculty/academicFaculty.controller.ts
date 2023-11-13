@@ -34,7 +34,7 @@ const getFaculty = catchAsync(async (req: Request, res: Response) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Faculties Retrived successfully',
-    data: result,
+    data: result.data,
   });
 });
 // Get Single Faculty
