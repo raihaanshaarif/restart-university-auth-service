@@ -4,6 +4,9 @@ import sendResponse from '../../../shared/sendResponse';
 import { IAcademicFaculty } from './academicFaculty.interface';
 import httpStatus from 'http-status';
 import { AcademicFacultyService } from './academicFaculty.service';
+import { academicFacultyFilterableFields } from '../academicSemester/academicSemester.constant';
+import pick from '../../../shared/pick';
+import { paginationFields } from '../../../constants/pagination';
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
   const { ...academicFacultyData } = req.body;
@@ -20,7 +23,12 @@ const createFaculty = catchAsync(async (req: Request, res: Response) => {
 
 // Get All Faculty
 const getFaculty = catchAsync(async (req: Request, res: Response) => {
-  const result = await AcademicFacultyService.getFaculty();
+  const filters = pick(req.query, academicFacultyFilterableFields);
+  const paginationOptions = pick(req.query, paginationFields);
+  const result = await AcademicFacultyService.getFaculty(
+    filters,
+    paginationOptions,
+  );
 
   sendResponse<IAcademicFaculty[]>(res, {
     statusCode: httpStatus.OK,

@@ -99,6 +99,16 @@
             "date": 1699534800717,
             "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\2023-09-11-19-error.log",
             "hash": "b3b21ee2ea0b91f4f717ca5779b9479f2afa66121eff34eee11edbfb88bdb0f9"
+        },
+        {
+            "date": 1699878653870,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\2023-13-11-18-error.log",
+            "hash": "46ec781e3e3745a59fa4936021e8800b0f8ae71c1bab5bee0656851b4a7ce3e2"
+        },
+        {
+            "date": 1699880407318,
+            "name": "G:\\@Phero 2023\\Restart\\01. noSql-Brainiac\\logs\\winston\\errors\\2023-13-11-19-error.log",
+            "hash": "e78168a9ee6123903120859a7cbaa3864874515db892d1a12d4894941fae1c3c"
         }
     ],
     "hashType": "sha256"
