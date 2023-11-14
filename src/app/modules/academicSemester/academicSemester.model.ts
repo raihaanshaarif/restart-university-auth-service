@@ -33,6 +33,10 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
   },
   {
     timestamps: true,
+    //To create id without underscore
+    toJSON: {
+      virtuals: true,
+    },
   },
 );
 

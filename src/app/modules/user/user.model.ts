@@ -9,6 +9,10 @@ const userSchema = new Schema<IUser>(
   },
   {
     timestamps: true,
+    //To create id without underscore
+    toJSON: {
+      virtuals: true,
+    },
   },
 );
 export const User = model<IUser, UserModel>('User', userSchema);
