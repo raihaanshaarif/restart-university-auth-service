@@ -46,3 +46,12 @@ export type IStudent = {
 };
 // const StudentModel = Model<IStudent, Record<String, unknown>>;
 export type StudentModel = Model<IStudent, Record<string, unknown>>;
+
+export type IStudentFilters = {
+  searchTerm?: string;
+  id?: string;
+  bloodGroup?: string;
+  email?: string;
+  contactNo?: string;
+  emergencyContactNo?: string;
+};

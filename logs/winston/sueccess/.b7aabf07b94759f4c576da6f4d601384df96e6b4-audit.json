@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/.b7aabf07b94759f4c576da6f4d601384df96e6b4-audit.json",
+    "files": [
+        {
+            "date": 1699374734753,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-07-11-22-success.log",
+            "hash": "7c070213c09348f5fb92067b13a303b7d5761478bd1ebd3c53d690b879c49533"
+        },
+        {
+            "date": 1700503199279,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-20-11-23-success.log",
+            "hash": "ca917a46f0fd0e78d18b7ecfec0619fcdb5469bc2ead6a6820ae3cd8d48677b3"
+        },
+        {
+            "date": 1700503203242,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-21-11-00-success.log",
+            "hash": "093948546645b9af31c7b8e3997fdef8bd58d01a37d56f36812dc56ab2cd421b"
+        },
+        {
+            "date": 1700506949558,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-21-11-01-success.log",
+            "hash": "d94dd895bc4d38f493bac81b42e5e2d1aeb653c1e9014b02aa8be73b3c1a1e82"
+        },
+        {
+            "date": 1700511280516,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-21-11-02-success.log",
+            "hash": "e46a5ad607b677c71873f942932977bbb252f3bd874d5c0b8f37e1d993ea11ef"
+        },
+        {
+            "date": 1700514099348,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-21-11-03-success.log",
+            "hash": "7445e3b520a9a5e06159e23609f316ef0f134a4b660d567de76a34cb1a6cbf50"
+        },
+        {
+            "date": 1700517825423,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-21-11-04-success.log",
+            "hash": "d259053fb427c8c970b528ba72d614905d49d0b2fcb16faae40d329bf5faf4c8"
+        }
+    ],
+    "hashType": "sha256"
+}
