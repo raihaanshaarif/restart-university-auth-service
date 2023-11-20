@@ -1,19 +1,22 @@
 import { z } from 'zod';
 
-export const createAcademicFacultyZodSchema = z.object({
+const createFacultyZodSchema = z.object({
   body: z.object({
     title: z.string({
-      required_error: 'title is required',
-      invalid_type_error: 'Title must be a string',
+      required_error: 'Title is required',
     }),
   }),
 });
 
-export const updateAcademicFacultyZodSchema = z.object({
+const updatefacultyZodSchema = z.object({
   body: z.object({
     title: z.string({
-      required_error: 'title is required',
-      invalid_type_error: 'Title must be a string',
+      required_error: 'Title is required',
     }),
   }),
 });
+
+export const AcademicFacultyValidation = {
+  createFacultyZodSchema,
+  updatefacultyZodSchema,
+};

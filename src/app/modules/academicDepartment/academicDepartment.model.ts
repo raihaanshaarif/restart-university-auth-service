@@ -9,7 +9,11 @@ const AcademicDepartmentSchema = new Schema<
   AcademicDepartmentModel
 >(
   {
-    title: { type: String, required: true, unique: true },
+    title: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     academicFaculty: {
       type: Schema.Types.ObjectId,
       ref: 'AcademicFaculty',
@@ -18,14 +22,13 @@ const AcademicDepartmentSchema = new Schema<
   },
   {
     timestamps: true,
-    //To create id without underscore
     toJSON: {
       virtuals: true,
     },
   },
 );
 
-export const AcademicDepartment = model<IAcademicDepartment>(
-  'AcademicDepartment',
-  AcademicDepartmentSchema,
-);
+export const AcademicDepartment = model<
+  IAcademicDepartment,
+  AcademicDepartmentModel
+>('AcademicDepartment', AcademicDepartmentSchema);

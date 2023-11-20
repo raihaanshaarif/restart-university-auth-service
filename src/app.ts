@@ -17,6 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/', routers);
 
+// const academicSemester = {
+//   code: '01',
+//   year: '2025',
+// };
+
 //Testing
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
 //   console.log(x)

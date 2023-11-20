@@ -44,5 +44,3 @@ export const academicSemesterFilterableFields = [
   'code',
   'year',
 ];
-
-export const academicFacultyFilterableFields = ['searchTerm'];

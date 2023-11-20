@@ -1,38 +1,37 @@
-import { Schema, SortOrder } from 'mongoose';
+import { SortOrder } from 'mongoose';
+import { paginationHelpers } from '../../../helpers/paginationHelper';
+
+import { AcademicDepartment } from './academicDepartment.model';
 import {
   IAcademicDepartment,
   IAcademicDepartmentFilters,
 } from './academicDepartment.interface';
-import { AcademicDepartment } from './academicDepartment.model';
 import { IPaginationOptions } from '../../interfaces/pagination';
+import { IGenericResponse } from '../../interfaces/common';
 import { academicDepartmentSearchableFields } from './academicDepartment.constant';
-import { paginationHelpers } from '../../../helpers/paginationHelper';
 
-const createDepartment = async (
-  payload: IAcademicDepartment | Schema.Types.ObjectId,
-): Promise<IAcademicDepartment> => {
-  const result = (await AcademicDepartment.create(payload)).populate(
-    'academicFaculty',
-  );
-  return result;
-};
-
-const getDepartment = async (
+const getAllDepartments = async (
   filters: IAcademicDepartmentFilters,
   paginationOptions: IPaginationOptions,
-) => {
+): Promise<IGenericResponse<IAcademicDepartment[]>> => {
+  const { limit, page, skip, sortBy, sortOrder } =
+    paginationHelpers.calculatePagination(paginationOptions);
+
   const { searchTerm, ...filtersData } = filters;
+
   const andConditions = [];
+
   if (searchTerm) {
     andConditions.push({
       $or: academicDepartmentSearchableFields.map(field => ({
         [field]: {
           $regex: searchTerm,
-          $options: 'i',
+          $paginationOptions: 'i',
         },
       })),
     });
   }
+
   if (Object.keys(filtersData).length) {
     andConditions.push({
       $and: Object.entries(filtersData).map(([field, value]) => ({
@@ -40,24 +39,23 @@ const getDepartment = async (
       })),
     });
   }
-  const { page, limit, skip, sortBy, sortOrder } =
-    paginationHelpers.calculatePagination(paginationOptions);
 
   const sortConditions: { [key: string]: SortOrder } = {};
+
   if (sortBy && sortOrder) {
     sortConditions[sortBy] = sortOrder;
   }
-
-  const whereCondition =
+  const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
 
-  const result = await AcademicDepartment.find(whereCondition)
+  const result = await AcademicDepartment.find(whereConditions)
     .populate('academicFaculty')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
 
   const total = await AcademicDepartment.countDocuments();
+
   return {
     meta: {
       page,
@@ -68,31 +66,48 @@ const getDepartment = async (
   };
 };
 
-// Single get
-
-const getSingleDepartment = async (id: string) => {
-  const result = await AcademicDepartment.findById(id);
+const createDepartment = async (
+  payload: IAcademicDepartment,
+): Promise<IAcademicDepartment | null> => {
+  const result = (await AcademicDepartment.create(payload)).populate(
+    'academicFaculty',
+  );
   return result;
 };
 
-const updateDepartment = async (id: string, payload: IAcademicDepartment) => {
-  const result = await AcademicDepartment.findByIdAndUpdate(
+const getSingleDepartment = async (
+  id: string,
+): Promise<IAcademicDepartment | null> => {
+  const result =
+    await AcademicDepartment.findById(id).populate('academicFaculty');
+  return result;
+};
+
+const updateDepartment = async (
+  id: string,
+  payload: Partial<IAcademicDepartment>,
+): Promise<IAcademicDepartment | null> => {
+  const result = await AcademicDepartment.findOneAndUpdate(
     { _id: id },
     payload,
-    { new: true },
+    {
+      new: true,
+    },
   ).populate('academicFaculty');
   return result;
 };
 
-const deleteDepartment = async (id: string) => {
+const deleteDepartment = async (
+  id: string,
+): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findByIdAndDelete(id);
   return result;
 };
 
 export const AcademicDepartmentService = {
-  createDepartment,
-  getDepartment,
+  getAllDepartments,
   getSingleDepartment,
   updateDepartment,
   deleteDepartment,
+  createDepartment,
 };

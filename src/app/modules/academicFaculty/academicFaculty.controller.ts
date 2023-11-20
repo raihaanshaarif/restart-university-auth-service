@@ -1,31 +1,31 @@
 import { Request, Response } from 'express';
-import catchAsync from '../../../shared/catchAsync';
-import sendResponse from '../../../shared/sendResponse';
-import { IAcademicFaculty } from './academicFaculty.interface';
 import httpStatus from 'http-status';
-import { AcademicFacultyService } from './academicFaculty.service';
-import { academicFacultyFilterableFields } from '../academicSemester/academicSemester.constant';
-import pick from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
+import catchAsync from '../../../shared/catchAsync';
+import pick from '../../../shared/pick';
+import sendResponse from '../../../shared/sendResponse';
+
+import { AcademicFacultyService } from './academicFaculty.service';
+import { academicFacultyFilterableFields } from './academicFaculty.constant';
+import { IAcademicFaculty } from './academicFaculty.interface';
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
   const { ...academicFacultyData } = req.body;
   const result =
     await AcademicFacultyService.createFaculty(academicFacultyData);
-
   sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Academic Faculty Created Successfully',
+    message: 'Academic Faculty created successfully',
     data: result,
   });
 });
 
-// Get All Faculty
-const getFaculty = catchAsync(async (req: Request, res: Response) => {
+const getAllFaculties = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicFacultyFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
-  const result = await AcademicFacultyService.getFaculty(
+
+  const result = await AcademicFacultyService.getAllFaculties(
     filters,
     paginationOptions,
   );
@@ -33,55 +33,55 @@ const getFaculty = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAcademicFaculty[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculties Retrived successfully',
+    message: 'Academic Faculties retrieved successfully',
+    meta: result.meta,
     data: result.data,
   });
 });
-// Get Single Faculty
 
 const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const result = await AcademicFacultyService.getSingleFaculty(id);
 
   sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculties Retrived successfully',
+    message: 'Academic Faculty fetched successfully',
     data: result,
   });
 });
 
-//Update Faculty
-const updateFaculty = catchAsync(async (req, res) => {
-  const id = req.params.id;
-  const body = req.body;
-  const result = await AcademicFacultyService.updateFaculty(id, body);
+const updateFaculty = catchAsync(
+  catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const updatedData = req.body;
+    const result = await AcademicFacultyService.updateFaculty(id, updatedData);
+
+    sendResponse<IAcademicFaculty>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Academic Faculty updated successfully',
+      data: result,
+    });
+  }),
+);
+
+const deleteFaculty = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const result = await AcademicFacultyService.deleteByIdFromDB(id);
 
   sendResponse<IAcademicFaculty>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Faculty Updated successfully',
+    message: 'Academic Faculty deleted successfully',
     data: result,
   });
 });
 
-//Delete Faculty
-const deteleFaculty = catchAsync(async (req: Request, res: Response) => {
-  const id = req.params.id;
-  const result = await AcademicFacultyService.deteleFaculty(id);
-
-  sendResponse<IAcademicFaculty>(res, {
-    statusCode: httpStatus.OK,
-    success: true,
-    message: 'Faculty Deleted successfully',
-    data: result,
-  });
-});
-
-export const AcademicSemesterController = {
+export const AcademicFacultyController = {
   createFaculty,
-  getFaculty,
+  getAllFaculties,
   getSingleFaculty,
   updateFaculty,
-  deteleFaculty,
+  deleteFaculty,
 };

@@ -4,10 +4,10 @@ import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 
-const createUser: RequestHandler = catchAsync(
+const createStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { user } = req.body;
-    const result = await usersService.createUser(user);
+    const { student, ...userData } = req.body;
+    const result = await usersService.createStudent(student, userData);
 
     // res.status(200).json({
     //   success: true,
@@ -24,5 +24,5 @@ const createUser: RequestHandler = catchAsync(
 );
 
 export const UserController = {
-  createUser,
+  createStudent,
 };
