@@ -3,6 +3,7 @@ import { usersService } from './user.service';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
+import { IUser } from './user.interface';
 
 const createStudent: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
@@ -39,13 +40,13 @@ const createFaculty: RequestHandler = catchAsync(
 
 const createAdmin: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const { admin, ...adminData } = req.body;
-    const result = await usersService.createAdmin(admin, adminData);
+    const { admin, ...userData } = req.body;
+    const result = await usersService.createAdmin(admin, userData);
 
-    sendResponse(res, {
+    sendResponse<IUser>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'User Created Successfully',
+      message: 'Admin created successfully!',
       data: result,
     });
   },

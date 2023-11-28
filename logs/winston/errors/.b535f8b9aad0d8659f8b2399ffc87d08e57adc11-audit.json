@@ -1,40 +1,40 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/.b535f8b9aad0d8659f8b2399ffc87d08e57adc11-audit.json",
+  "files": [
+    {
+      "date": 1699374734760,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-07-11-22-error.log",
+      "hash": "d9a7c0893a223ee98dff172f064cafbbe019a1c9130a4beaaadf0d3d772e12f7"
     },
-    "auditLog": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/.b535f8b9aad0d8659f8b2399ffc87d08e57adc11-audit.json",
-    "files": [
-        {
-            "date": 1699374734760,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-07-11-22-error.log",
-            "hash": "d9a7c0893a223ee98dff172f064cafbbe019a1c9130a4beaaadf0d3d772e12f7"
-        },
-        {
-            "date": 1700503199296,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-20-11-23-error.log",
-            "hash": "f0d741f1a4a40f86699f234d516c6b335629f9ce6a715d612c8731783662747c"
-        },
-        {
-            "date": 1700505003118,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-00-error.log",
-            "hash": "525609a86f9d74626ff5933848f94454b0af310b508d7790eb9258ab1b6b0594"
-        },
-        {
-            "date": 1700507024390,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-01-error.log",
-            "hash": "3887d084ad6f987f58849389d5125127f09e9fc0a677d2837fb152186789372c"
-        },
-        {
-            "date": 1700514099353,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-03-error.log",
-            "hash": "aa698071f2ea53b10e9bb7a344a7401a09f0b4c7a4c2d6eb512da9d40d4ac984"
-        },
-        {
-            "date": 1700517825429,
-            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-04-error.log",
-            "hash": "33f21d193c5ebdb3c01de22378c0cac57f202979944ab534f66e5ace36f211e7"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1700503199296,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-20-11-23-error.log",
+      "hash": "f0d741f1a4a40f86699f234d516c6b335629f9ce6a715d612c8731783662747c"
+    },
+    {
+      "date": 1700505003118,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-00-error.log",
+      "hash": "525609a86f9d74626ff5933848f94454b0af310b508d7790eb9258ab1b6b0594"
+    },
+    {
+      "date": 1700507024390,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-01-error.log",
+      "hash": "3887d084ad6f987f58849389d5125127f09e9fc0a677d2837fb152186789372c"
+    },
+    {
+      "date": 1700514099353,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-03-error.log",
+      "hash": "aa698071f2ea53b10e9bb7a344a7401a09f0b4c7a4c2d6eb512da9d40d4ac984"
+    },
+    {
+      "date": 1700517825429,
+      "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/errors/2023-21-11-04-error.log",
+      "hash": "33f21d193c5ebdb3c01de22378c0cac57f202979944ab534f66e5ace36f211e7"
+    }
+  ],
+  "hashType": "sha256"
 }

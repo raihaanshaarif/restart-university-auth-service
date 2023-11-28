@@ -9,20 +9,21 @@ export type UserName = {
 
 export type IAdmin = {
   id: string;
-  name: UserName; //embedded object
-  dateOfBirth: string;
+  name: UserName;
+  profileImage: string;
+  dateOfBirth?: string;
   email: string;
   contactNo: string;
   emergencyContactNo: string;
-  gender: 'Male' | 'Female';
-  presentAddress: string;
-  permanentAddress: string;
+  gender?: 'male' | 'female';
+  permanentAddress?: string;
+  presentAddress?: string;
   bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
-  managementDepartment: Types.ObjectId | IManagementDepartment; // reference _id
+
+  managementDepartment: Types.ObjectId | IManagementDepartment;
   designation: string;
-  profileImage?: string;
 };
-// const StudentModel = Model<IStudent, Record<String, unknown>>;
+
 export type AdminModel = Model<IAdmin, Record<string, unknown>>;
 
 export type IAdminFilters = {
@@ -31,4 +32,8 @@ export type IAdminFilters = {
   email?: string;
   contactNo?: string;
   emergencyContactNo?: string;
+  gender?: 'male' | 'female';
+  bloodGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
+  managementDepartment?: string;
+  designation?: string;
 };

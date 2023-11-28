@@ -168,32 +168,37 @@ const createAdminZodSchema = z.object({
       dateOfBirth: z.string({
         required_error: 'Date of birth is required',
       }),
+
+      gender: z.string({
+        required_error: 'Gender is required',
+      }),
+
+      bloodGroup: z.string({
+        required_error: 'Blood group is required',
+      }),
+
       email: z
         .string({
           required_error: 'Email is required',
         })
         .email(),
+
       contactNo: z.string({
         required_error: 'Contact number is required',
       }),
+
       emergencyContactNo: z.string({
         required_error: 'Emergency contact number is required',
-      }),
-      gender: z.string({
-        required_error: 'Gender is required',
       }),
 
       presentAddress: z.string({
         required_error: 'Present address is required',
       }),
+
       permanentAddress: z.string({
         required_error: 'Permanent address is required',
       }),
-      bloodGroup: z
-        .string({
-          required_error: 'Blood group is required',
-        })
-        .optional(),
+
       managementDepartment: z.string({
         required_error: 'Management department is required',
       }),
@@ -201,11 +206,8 @@ const createAdminZodSchema = z.object({
       designation: z.string({
         required_error: 'Designation is required',
       }),
-      profileImage: z
-        .string({
-          required_error: 'Profile Image is required',
-        })
-        .optional(),
+
+      profileImage: z.string().optional(),
     }),
   }),
 });
