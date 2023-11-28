@@ -39,6 +39,11 @@
             "date": 1701191524069,
             "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-28-11-23-success.log",
             "hash": "6264d3fbb5597fcdaebaf1c2d7117b287dbb98e049a7a5d5c3b7ed9e27ab3aa9"
+        },
+        {
+            "date": 1701204531399,
+            "name": "/Users/raihan/Desktop/@phero/restart/restart-university-auth-service/logs/winston/sueccess/2023-29-11-02-success.log",
+            "hash": "d77fc0d2d018208c20dd777b30067ed9fc2d8235e32ba0de74f1f0a8b0fde721"
         }
     ],
     "hashType": "sha256"
