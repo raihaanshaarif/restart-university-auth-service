@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/raihan/Desktop/My Files/Programming/Restart/restart-university-auth-service/logs/winston/sueccess/.e34158059ed25cbad150fd092d14c99f6f4490d2-audit.json",
+    "files": [
+        {
+            "date": 1710083390916,
+            "name": "/Users/raihan/Desktop/My Files/Programming/Restart/restart-university-auth-service/logs/winston/sueccess/2024-10-03-21-success.log",
+            "hash": "f30e0d944dd6a2a5f4617480f217febf72d667d404c35abb4af1c13de7c0339b"
+        },
+        {
+            "date": 1710186080902,
+            "name": "/Users/raihan/Desktop/My Files/Programming/Restart/restart-university-auth-service/logs/winston/sueccess/2024-12-03-01-success.log",
+            "hash": "6977f5fc04e675044bf0852f904882ac50143fe4f2a29fd8eb5966011aa4d64f"
+        },
+        {
+            "date": 1710187628517,
+            "name": "/Users/raihan/Desktop/My Files/Programming/Restart/restart-university-auth-service/logs/winston/sueccess/2024-12-03-02-success.log",
+            "hash": "047a53630cc219819f8e81424e0399f976f046a21d0ce4d01a9bc6be1786aa9d"
+        }
+    ],
+    "hashType": "sha256"
+}
